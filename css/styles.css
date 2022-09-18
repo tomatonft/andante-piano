@@ -480,6 +480,10 @@ table {
   margin-top: 24px;
 }
 
+.headline {
+  font-weight: normal;
+}
+
 th,
 td {
   border: 1px solid #0E536D;
