@@ -579,6 +579,15 @@ footer .address {
 i {
   color: #fff;
   font-size: 32px;
+  transition: all .3s ease;
+}
+
+.bi-facebook:hover {
+  color: #1877f2;
+}
+
+.bi-twitter:hover {
+  color: #1da1f2;
 }
 
 small {
