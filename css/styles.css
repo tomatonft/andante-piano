@@ -327,7 +327,10 @@ main {
 
 .main-image {
   /* outline: 1px solid red; */
-  margin-top: calc((60vh - 80px) / 2 + 12px);
+  /* margin-top: calc((60vh - 80px) / 2 + 12px); */
+  /* margin-top: 60vh; */
+  position: absolute;
+  top: 60vh;
 }
 
 .main-image img {
