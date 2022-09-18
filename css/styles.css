@@ -331,6 +331,8 @@ main {
   /* margin-top: 60vh; */
   position: absolute;
   top: 60vh;
+  right: 0;
+  left: 0;
 }
 
 .main-image img {
