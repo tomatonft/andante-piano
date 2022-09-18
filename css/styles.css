@@ -243,7 +243,7 @@ main {
 
 #main-visual .container {
   /* height: calc(100% - 80px); */
-  height: 100vh;
+  /* height: 100vh; */
   /* outline: 1px solid purple; */
   position: absolute;
   top: 0;
@@ -336,6 +336,7 @@ main {
 .main-image img {
   display: block;
   width: 80%;
+  /* height: 200px; */
   margin: 0 auto;
 }
 
