@@ -454,9 +454,14 @@ main {
   margin-top: 4px;
 }
 
+.fee-details li {
+  display: flex;
+  align-items: center;
+}
+
 #fee img {
   width: 16px;
-  height:fit-content;
+  height:16px;
   margin-right: 8px;
 }
 
@@ -485,7 +490,7 @@ tbody tr td {
   padding-right: 16px;
 }
 
-#fee p {
+.attention {
   text-align: right;
   padding-top: 4px;
 }
