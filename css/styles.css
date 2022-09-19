@@ -240,8 +240,9 @@ main {
 #main-visual {
   position: relative;
   padding-top: 0;
-  height: calc(var(--vh, 1vh) * 100);
-  /* outline: 1px solid green; */
+  /* height: calc(var(--vh, 1vh) * 100); */
+  height: calc((var(--vh, 1vh) * 100) - 80px);
+  outline: 1px solid green;
 }
 
 #main-visual .container {
@@ -261,9 +262,10 @@ main {
   /* max-width  : 400px; */
   max-width: 100%;
   /* height     : 250px; */
-  height: calc(60vh - 80px);
+  /* height: calc(60vh - 80px); */
   /* margin     : auto; */
   /* overflow   : hidden; */
+  height: calc((var(--vh, 1vh) * 60) - 80px);
 }
 
 /* --- 背景の指定 ------------------------------------------- */
@@ -333,16 +335,22 @@ main {
   /* margin-top: calc((60vh - 80px) / 2 + 12px); */
   /* margin-top: 60vh; */
   position: absolute;
-  top: 60vh;
+  top: calc((var(--vh, 1vh) * 60) - 80px);
+  /* top: calc(var(--vh, 1vh) * 60); */
+  /* top: 60vh; */
   right: 0;
   left: 0;
 }
 
 .main-image img {
   display: block;
-  width: 80%;
+  /* width: 80%; */
+  height: calc((var(--vh, 1vh) * 40) - 80px);
+  /* top: calc(var(--vh, 1vh) * 60); */
+  /* top: 60vh; */
   /* height: 200px; */
   margin: 0 auto;
+  margin-top: 24px;
 }
 
 
