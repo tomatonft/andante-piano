@@ -17,7 +17,7 @@ $(() => {
 
   // スクロールイベント（スクロールされた際に実行）
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 500) {
+    if ($(this).scrollTop() > 300) {
       freeExperience.fadeIn();
 
     } else {

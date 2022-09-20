@@ -82,7 +82,6 @@ p {
   margin: 96px 0;
 }
 
-
 .en {
   font-family: 'Oleo Script Swash Caps', cursive;
   font-size: 16px;
@@ -114,7 +113,6 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* outline: 1px solid red; */
 }
 
 /* ハンバーガーメニュー（閉じている時） */
@@ -228,6 +226,10 @@ header .container {
   transform: scaleX(1);
 }
 
+.header-nav {
+  display: none;
+}
+
 /* --------------------------
         main-visual
 -----------------------------*/
@@ -240,35 +242,23 @@ main {
 #main-visual {
   position: relative;
   padding-top: 0;
-  /* height: calc(var(--vh, 1vh) * 100); */
   height: calc((var(--vh, 1vh) * 100) - 80px);
-  outline: 1px solid green;
 }
 
 #main-visual .container {
-  /* height: calc(100% - 80px); */
-  /* height: 100vh; */
-  /* outline: 1px solid purple; */
   position: absolute;
   top: 0;
   left: 16px;
-  
 }
 
-
-/* --- 全体のBOX定義 ---------------------------------------- */
+/* --- main-visualのBOX定義 --- */
 .main-visual-img {
   position   : relative;
-  /* max-width  : 400px; */
   max-width: 100%;
-  /* height     : 250px; */
-  /* height: calc(60vh - 80px); */
-  /* margin     : auto; */
-  /* overflow   : hidden; */
   height: calc((var(--vh, 1vh) * 60) - 80px);
 }
 
-/* --- 背景の指定 ------------------------------------------- */
+/* --- 背景の指定 --- */
 .main-visual-img .bgImg {
   position   : absolute;
   top        : 0;
@@ -281,7 +271,7 @@ main {
   background-position: center;
 }
 
-/* --- 段差で背景画像のアニメーションを実行 ----------------- */
+/* --- 背景アニメーション --- */
 .main-visual-img .src1 {
   background-image : url(../img/main-visual1.jpg);   
 }
@@ -294,7 +284,6 @@ main {
   animation-delay  : 10s;
 }
 
-
 @keyframes fade {
    0% { opacity: 0; }
    5% { opacity: 1; }
@@ -304,7 +293,6 @@ main {
 }
 
 .main-visual-text {
-  /* outline: 1px solid green; */
   margin-top: calc((60vh - 80px) / 2 - 12px);
   position: relative;
   display: flex;
@@ -331,28 +319,17 @@ main {
 }
 
 .main-image {
-  /* outline: 1px solid red; */
-  /* margin-top: calc((60vh - 80px) / 2 + 12px); */
-  /* margin-top: 60vh; */
   position: absolute;
   top: calc((var(--vh, 1vh) * 60) - 80px);
-  /* top: calc(var(--vh, 1vh) * 60); */
-  /* top: 60vh; */
   right: 0;
   left: 0;
 }
 
 .main-image img {
   display: block;
-  /* width: 80%; */
   height: calc((var(--vh, 1vh) * 40) - 80px);
-  /* top: calc(var(--vh, 1vh) * 60); */
-  /* top: 60vh; */
-  /* height: 200px; */
-  margin: 0 auto;
-  margin-top: 24px;
+  margin: 20px auto 0;
 }
-
 
 /* --------------------------
         about
@@ -378,6 +355,7 @@ main {
 
 #about li img {
   border-radius: 16px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 /* --------------------------
@@ -398,16 +376,17 @@ main {
 }
 
 .section-text h3 {
-  border-bottom: 4px solid #0E536D;
+  border-bottom: 2px solid #0E536D;
   width: fit-content;
-  margin: 0 auto;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
+  font-weight: normal;
 }
 
 .section-info img {
   border-radius: 32px;
   margin-top: 48px;
   width: 80%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 /* --------------------------
@@ -460,7 +439,9 @@ main {
   left:0;
   width:100%;
   height:100%;
-  box-shadow: 5px 2.5px 3px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 5px 2.5px 3px rgba(0, 0, 0, 0.3); */
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
 }
 
 /* --------------------------
@@ -575,12 +556,15 @@ footer {
   height: calc(280px + 83px);
   padding: 16px 0;
   text-align: center;
-  /* padding-bottom: 83px; */
 }
 
 footer .title-text::before,
 footer .title-text::after {
   content: none;
+}
+
+footer .title-text {
+  position: static;
 }
 
 .footer-title {
@@ -589,8 +573,7 @@ footer .title-text::after {
 
 footer .address {
   text-align: center;
-  margin-top: 32px;
-  margin-bottom: 16px;
+  margin: 32px 0 16px;
 }
 
 .sns {
@@ -621,6 +604,98 @@ small {
   font-size: 14px;
 }
 
+/* medium screen */
+@media (min-width: 600px) {
+  body {
+    background: #8EC5E4;
+  }
+}
+
+/* large screen */
+@media (min-width: 800px) {
+  body {
+    /* background: #EA6144; */
+    background: #fff;
+  }
+
+  .site-title {
+    flex: 1;
+  }
+  
+  /* ハンバーガーメニュー */
+  .hamburger {
+    display: none;
+  }
+
+  .header-nav {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+
+  .header-nav-list {
+    display: flex;
+  }
+
+  .header-nav-list li a {
+    color: #0E536D;
+    font-weight: 500;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all .3s;
+  }
+
+  .header-nav-list li a:hover {
+    background-color: #FAE06A;
+    font-weight: 600;
+  }
+
+  #main-visual .container {
+    right: 16px;
+  }
+
+  /* --- main-visualのBOX定義 --- */
+  .main-visual-img {
+    width: 70%;
+    height: calc((var(--vh, 1vh) * 100) - 80px);
+    margin-left: auto;
+  }
+
+  .main-visual-img::before {
+    content: '';
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(to right, #fff, transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .main-visual-text {
+    margin-top: calc((100vh - 80px) / 2 - 12px);
+  }
+  
+  .main-visual-text li {
+    right: 0;
+  }
+  
+  .main-image {
+    top: calc(50% - 133px);
+    left: 10%;
+    z-index: 2;
+  }
+  
+  .main-image img {
+    height: calc((var(--vh, 1vh) * 50) - 80px);
+    margin: 0;
+  }
+  
+
+
+
+}
 
 
 
