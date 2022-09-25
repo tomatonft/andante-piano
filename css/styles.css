@@ -728,6 +728,10 @@ label + label {
 input,
 select,
 textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #7c7c7c;
+  border-radius: 4px;
   width: 100%;
   padding: 4px 8px;
 }
