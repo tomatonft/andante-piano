@@ -12,21 +12,32 @@ $(() => {
   /*=================================================
   無料体験ボタン
   ===================================================*/
-  let freeExperience = $('.free-experience');
-  freeExperience.hide();
+  
+  let experienceButtonSmall = $('.experience-button-sm');
+  let experienceButtonLarge = $('.experience-button-lg');
+  let windowSm = 768;
 
-  // スクロールイベント（スクロールされた際に実行）
+  experienceButtonSmall.hide();
+  experienceButtonLarge.hide();
+
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 300) {
-      freeExperience.fadeIn();
+    if ($(this).scrollTop() > 300 && $(this).width() <= windowSm) {
+        experienceButtonSmall.fadeIn();
+      } else {
+        experienceButtonSmall.fadeOut();
+     }
+   });
 
-    } else {
-      freeExperience.fadeOut();
-    }
-  });
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 300 && $(this).width() > windowSm) {
+        experienceButtonLarge.fadeIn();
+      } else {
+        experienceButtonLarge.fadeOut();
+     }
+   });
 
   /*=================================================
-  ハンバーガ―メニュー
+  ハンバーガ―メニュー共通処理
   ===================================================*/
   $('.hamburger').on('click', function() {
     hamburger();
@@ -36,7 +47,7 @@ $(() => {
     hamburger();
   });
 /*=================================================
-  ハンバーガ―メニュー共通処理
+  ハンバーガ―メニュー
 ===================================================*/
 
 function hamburger() {
@@ -64,6 +75,34 @@ function hamburger() {
     
     $("html, body").animate({scrollTop:position}, 600, "swing");
     return false;
+  });
+
+   /*=================================================
+  交差監視API
+  ===================================================*/
+
+  function callback(entries, obs) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      entry.target.classList.add('appear');
+      obs.unobserve(entry.target);
+    });
+  }
+
+  const options = {
+    threshold: 0.2,
+  };
+
+  const observer = new IntersectionObserver(callback, options);
+
+  const targets = document.querySelectorAll('.animate');
+ 
+
+  targets.forEach(target => {
+    observer.observe(target);
   });
 
 });
