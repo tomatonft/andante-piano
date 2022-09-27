@@ -762,6 +762,14 @@ button {
   border-radius: 16px;
 }
 
+.end-message {
+  display: none;
+}
+
+.false-message {
+  display: none;
+}
+
 .contact-footer {
   height: fit-content;
 }
