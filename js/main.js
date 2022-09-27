@@ -105,4 +105,33 @@ function hamburger() {
     observer.observe(target);
   });
 
+  /*=================================================
+  Google Form
+  ===================================================*/
+
+  $(document).ready(function () {
+
+    $('#mG61Hd').submit(function (event) {
+      var formData = $('#mG61Hd').serialize();
+      $.ajax({
+        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeRJmJBrRmiyxaRd2_n_LKvzHu_WrAkRY20uOF_AcUhDv-qQA/formResponse",
+        data: formData,
+        type: "POST",
+        dataType: "xml",
+        statusCode: {
+          0: function () {
+            $(".end-message").slideDown();
+            $(".submit-btn").fadeOut();
+            window.location.href = "thanks.html";
+          },
+          200: function () {
+            $(".false-message").slideDown();
+          }
+        }
+      });
+      event.preventDefault();
+    });
+
+  });
+
 });
