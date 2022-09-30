@@ -74,21 +74,23 @@
 
       <!-- <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeRJmJBrRmiyxaRd2_n_LKvzHu_WrAkRY20uOF_AcUhDv-qQA/formResponse" target="_self" method="POST"> -->
       
-      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeRJmJBrRmiyxaRd2_n_LKvzHu_WrAkRY20uOF_AcUhDv-qQA/formResponse" target="_self" method="POST" id="mG61Hd" jsmodel="TOfxwf Q91hve CEkLOc" data-shuffle-seed="-8346312906843922107" data-response="%.@.[]]" data-dlp-data="%.@.null,false,[]]" data-first-entry="0" data-last-entry="8" data-is-first-page="true">
+      <!-- <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeRJmJBrRmiyxaRd2_n_LKvzHu_WrAkRY20uOF_AcUhDv-qQA/formResponse" target="_self" method="POST" id="mG61Hd" jsmodel="TOfxwf Q91hve CEkLOc" data-shuffle-seed="-8346312906843922107" data-response="%.@.[]]" data-dlp-data="%.@.null,false,[]]" data-first-entry="0" data-last-entry="8" data-is-first-page="true"> -->
+
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeRJmJBrRmiyxaRd2_n_LKvzHu_WrAkRY20uOF_AcUhDv-qQA/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
         <label class="animate">
           <p>お名前<span>*</span></p>
-          <input type="text" name="entry.254224697" class="text">
+          <input type="text" name="entry.254224697" class="text" required>
         </label>
 
         <label class="animate">
           <p>お名前（ふりがな）<span>*</span></p>
-          <input type="text" name="entry.750578398" class="text">
+          <input type="text" name="entry.750578398" class="text" required>
         </label>
 
         <label for="sex" class="animate">
           <p>性別<span>*</span></p>
-          <select name="entry.1273015871" id="">
-            <option name="entry.1273015871">--性別をお選びください--</option>
+          <select name="entry.1273015871" id="" required>
+            <option name="entry.1273015871" value="">--性別をお選びください--</option>
             <option name="entry.1273015871" value="男性">男性</option>
             <option name="entry.1273015871" value="女性">女性</option>
           </select>
@@ -96,8 +98,8 @@
 
         <label for="age" class="animate">
           <p>年齢<span>*</span></p>
-          <select name="entry.433415265" id="">
-            <option name="entry.433415265">--年齢をお選びください--</option>
+          <select name="entry.433415265" id="" required>
+            <option name="entry.433415265" value="">--年齢をお選びください--</option>
             <option name="entry.433415265" value="3歳">3歳</option>
             <option name="entry.433415265" value="4歳">4歳</option>
             <option name="entry.433415265" value="5歳">5歳</option>
@@ -126,17 +128,17 @@
   
         <label class="animate">
           <p>メールアドレス<span>*</span></p>
-          <input type="text" name="entry.1711039311" class="text">
+          <input type="text" name="entry.1711039311" class="text" required>
         </label>
 
         <label class="animate">
           <p>電話番号<span>*</span></p>
-          <input type="phone" name="entry.1802720103" class="text">
+          <input type="phone" name="entry.1802720103" class="text" required>
         </label>
   
         <label class="animate">
           <p>お問い合わせ内容<span>*</span></p>
-          <textarea name="entry.917722593"></textarea>
+          <textarea name="entry.917722593" required></textarea>
         </label>
 
         <div class="form-buttons">
@@ -145,8 +147,8 @@
         </div>
 
       </form>
-      <p class="end-message">お問い合わせありがとうございました</p>
-      <p class="false-message">送信失敗です</p>
+      <script type="text/javascript">var submitted = false;</script>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thanks.html';}"></iframe>
     </div>
   </main>
 

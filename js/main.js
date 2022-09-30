@@ -2,17 +2,13 @@
 
 $(() => {
 
-/*=================================================
-  スマホでの100vhの見え方の違いを調節（#main-visual)
-  ===================================================*/
+/* スマホでの100vhの見え方の違いを調節（#main-visual) */
   let vh = window.innerHeight * 0.01;
 
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-  /*=================================================
-  無料体験ボタン
-  ===================================================*/
-  
+
+/* 無料体験ボタン */
   let experienceButtonSmall = $('.experience-button-sm');
   let experienceButtonLarge = $('.experience-button-lg');
   let windowSm = 768;
@@ -36,9 +32,8 @@ $(() => {
      }
    });
 
-  /*=================================================
-  ハンバーガ―メニュー共通処理
-  ===================================================*/
+
+/* ハンバーガ―メニュー共通処理 */
   $('.hamburger').on('click', function() {
     hamburger();
   });
@@ -46,10 +41,9 @@ $(() => {
   $('#navi a').on('click', function() {
     hamburger();
   });
-/*=================================================
-  ハンバーガ―メニュー
-===================================================*/
 
+
+/* ハンバーガ―メニュー */
 function hamburger() {
   $('.hamburger').toggleClass('active');
 
@@ -62,10 +56,8 @@ function hamburger() {
   }
 }
 
-/*=================================================
-  スムーススクロール
-  ===================================================*/
-  
+
+/* スムーススクロール */
   $('a[href^="#"]').click(function(){
     let href= $(this).attr("href");
 
@@ -77,10 +69,8 @@ function hamburger() {
     return false;
   });
 
-   /*=================================================
-  交差監視API
-  ===================================================*/
 
+/* 交差監視API */
   function callback(entries, obs) {
     entries.forEach(entry => {
       if (!entry.isIntersecting) {
@@ -103,35 +93,6 @@ function hamburger() {
 
   targets.forEach(target => {
     observer.observe(target);
-  });
-
-  /*=================================================
-  Google Form
-  ===================================================*/
-
-  $(document).ready(function () {
-
-    $('#mG61Hd').submit(function (event) {
-      var formData = $('#mG61Hd').serialize();
-      $.ajax({
-        url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeRJmJBrRmiyxaRd2_n_LKvzHu_WrAkRY20uOF_AcUhDv-qQA/formResponse",
-        data: formData,
-        type: "POST",
-        dataType: "xml",
-        statusCode: {
-          0: function () {
-            $(".end-message").slideDown();
-            $(".submit-btn").fadeOut();
-            window.location.href = "thanks.html";
-          },
-          200: function () {
-            $(".false-message").slideDown();
-          }
-        }
-      });
-      event.preventDefault();
-    });
-
   });
 
 });

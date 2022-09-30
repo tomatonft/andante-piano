@@ -349,7 +349,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 #about li:nth-child(even) {
@@ -524,7 +523,6 @@ tbody tr td {
 .experience-button {
   display: block;
   cursor: pointer;
-  /* background-color: #F6B7AA; */
   background-color: rgba(246, 183, 170, 0.9);
   color: #0E536D;
   text-align: center;
@@ -762,19 +760,29 @@ button {
   border-radius: 16px;
 }
 
-.end-message {
-  display: none;
-}
-
-.false-message {
-  display: none;
-}
-
 .contact-footer {
   height: fit-content;
 }
 
+/* --------------------------
+        thanks
+-----------------------------*/
+.thanks-page {
+  text-align: center;
+}
 
+.thanks-page-footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.thanks-page-button {
+  margin-top: 100px;
+}
+
+/* --------------------------
+        レスポンシブ
+-----------------------------*/
 /* medium screen */
 @media (min-width: 600px) {
   #about li {
@@ -834,7 +842,6 @@ button {
     margin-right: auto;
     margin-left: auto;
   }
-
 }
 
 /* large screen */
@@ -979,20 +986,13 @@ button {
   }
 
   footer .address {
-    /* text-align: center; */
     margin: 0;
   }
 
   .sns {
-    /* display: flex;
-    justify-content: center; */
     margin-bottom: 0;
     justify-content: flex-end;
   }
-  
-  
-
-
 }
 
 
