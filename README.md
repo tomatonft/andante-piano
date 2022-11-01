@@ -14,7 +14,7 @@
 サイト設計・デザイン・コーディング
 
 ### 使用ツール
-HTML, CSS, JavaScript, Figma
+HTML, CSS, JavaScript, jQuery, Figma(デザイン）
 
 ### 意図・ポイント
 小さなお子様のいらっしゃる保護者様が主なターゲットで、親しみやすさ、子どもらしさを意識しました。
